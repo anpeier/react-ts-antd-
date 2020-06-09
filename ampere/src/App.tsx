@@ -3,13 +3,19 @@ import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
+import Icon from "./components/Icon/icon";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+library.add(fas);
+
 function App() {
   return (
     <div className="App">
+      <Icon icon="arrow-down" theme="primary" size="10x"></Icon>
       <Menu
-        mode="vertical"
+        mode="horizontal"
         defaultIndex="1"
-        defaultOpenSubMenus={['3']}
+        defaultOpenSubMenus={["3"]}
         onSelect={(index) => {
           alert(index);
         }}

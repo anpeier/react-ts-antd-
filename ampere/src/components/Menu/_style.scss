@@ -17,7 +17,7 @@
     &.is-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
-      cursor: default;
+      cursor: not-allowed;
     }
     &.is-active,
     &:hover {
@@ -31,7 +31,7 @@
 .submenu-item {
   position: relative;
   .submenu--title {
-    display: flex;
+    display: none;
     align-items: center;
   }
   .arrow-icon {
@@ -59,6 +59,7 @@
   list-style: none;
   padding-left: 0;
   white-space: nowrap;
+  transition: opacity 0.5s ease-in-out;
   .menu-item {
     padding: $menu-item-padding-y $menu-item-padding-x;
     cursor: pointer;
@@ -73,7 +74,6 @@
       pointer-events: none;
     }
   }
-  
 }
 .ampere-submenu.menu-opened {
   display: block;
@@ -95,7 +95,8 @@
 }
 .menu-vertical {
   flex-direction: column;
-  border-bottom: 0px;
+  border-bottom: none;
+  width: 10rem;
   border-right: $menu-border-width solid $menu-border-color;
   > .menu-item {
     border-left: $menu-item-active-border-width solid transparent;
